@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainUI : MonoBehaviour
 {
-    public void OnClickReloadScene()
+    public void OnClickMainMenu()
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.SceneTransitionCallback?.Invoke();
+            GameManager.Instance.SceneTransitionCallback?.Invoke(SceneManager.MAIN_MENU);
         }
     }
 }

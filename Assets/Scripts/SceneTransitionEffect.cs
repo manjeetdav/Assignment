@@ -15,12 +15,12 @@ public class SceneTransitionEffect : MonoBehaviour
         }
     }
 
-    private void StartTransition()
+    private void StartTransition(string sceneName)
     {
         _bgImage.gameObject.SetActive(true);
         _bgImage.DOFade(1f, 1f).From(0f).OnComplete(() =>
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.GotoScene(sceneName);
         });
     }
 }
